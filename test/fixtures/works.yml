@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workTitle: MyString
+  pathImage: MyString
+  workText: MyText
+  workTags: MyString
+
+two:
+  workTitle: MyString
+  pathImage: MyString
+  workText: MyText
+  workTags: MyString
