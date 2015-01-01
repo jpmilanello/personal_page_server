@@ -4,8 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  resources :questions, :defaults => { :format => 'json' }
-  resources :admins, :defaults => { :format => 'json' }
+  resources :works, :defaults => { :format => 'json' }
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
