@@ -2,6 +2,7 @@ class WorksController < ApplicationController
 	def set_access_control_headers 
 		headers['Access-Control-Allow-Origin'] = '*' 
 		headers['Access-Control-Request-Method'] = '*' 
+ 		headers['Access-Control-Allow-Headers'] = 'Content-Type, Content-Range, Content-Disposition, Content-Description'
 	end
 	def fetch_question
     	@work = Work.find_by_id(params[:id])
