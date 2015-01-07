@@ -56,6 +56,12 @@ class WorksController < ApplicationController
 	      	end
 	    end
 	 end
+	def upload
+	  uploaded_io = params[:work][:pahtImage]
+	  File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+	    file.write(uploaded_io.read)
+	  end
+	end
 	def work_params
       params.require(:work).permit(:id, :workTitle, :pathImage, :workText, :workTags)
     end
