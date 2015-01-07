@@ -2,7 +2,6 @@ class WorksController < ApplicationController
 	def set_access_control_headers 
 		headers['Access-Control-Allow-Origin'] = '*' 
 		headers['Access-Control-Request-Method'] = '*' 
- 		headers['Access-Control-Allow-Headers'] = 'Content-Type, Content-Range, Content-Disposition, Content-Description'
 	end
 	def fetch_question
     	@work = Work.find_by_id(params[:id])
@@ -57,12 +56,6 @@ class WorksController < ApplicationController
 	      	end
 	    end
 	 end
-	def upload
-	  uploaded_io = params[:work][:pahtImage]
-	  File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-	    file.write(uploaded_io.read)
-	  end
-	end
 	def work_params
       params.require(:work).permit(:id, :workTitle, :pathImage, :workText, :workTags)
     end
