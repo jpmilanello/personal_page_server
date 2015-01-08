@@ -2,7 +2,7 @@ class CreateWorks < ActiveRecord::Migration
   def change
     create_table :works do |t|
       t.string :workTitle
-      t.string :pathImage
+      t.attachment :pathImage
       t.text :workText
       t.string :workTags
 
