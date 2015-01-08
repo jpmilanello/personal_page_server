@@ -11,15 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101022338) do
+ActiveRecord::Schema.define(version: 20150108031352) do
 
-  create_table "works", force: true do |t|
-    t.string   "workTitle"
-    t.string   "pathImage"
-    t.text     "workText"
-    t.string   "workTags"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "works" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
