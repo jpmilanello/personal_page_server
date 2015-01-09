@@ -47,13 +47,18 @@ class WorksController < ApplicationController
 	def destroy
 		@work = Work.find_by_id(params[:id])
 	    respond_to do |format|
-	      	if @work.destroy
-	        	format.json { head :no_content, status: :ok }
-	        	format.xml { head :no_content, status: :ok }
-	      	else
-	        	format.json { render json: @work.errors, status: :unprocessable_entity }
-	        	format.xml { render xml: @work.errors, status: :unprocessable_entity }
-	      	end
+	    	if @work.image.destroy
+		      	if @work.destroy
+		        	format.json { head :no_content, status: :ok }
+		        	format.xml { head :no_content, status: :ok }
+		      	else
+		        	format.json { render json: @work.errors, status: :unprocessable_entity }
+		        	format.xml { render xml: @work.errors, status: :unprocessable_entity }
+		      	end
+		    else
+		    	format.json { render json: @work.errors, status: :unprocessable_entity }
+		        format.xml { render xml: @work.errors, status: :unprocessable_entity }
+		    end
 	    end
 	 end
 	def work_params
